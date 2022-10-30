@@ -7,14 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  data: any[] = [];
+  // data: any[] = []; //declare as array
+  data: any = {}; //declare as object
 
   constructor(public http: HttpClient) {
     this.getData();
   }
 
   getData() {
-    this.http.get<any>('https://jsonplaceholder.typicode.com/todos').subscribe(
+    this.http.get<any>('https://jsonplaceholder.typicode.com/todos/50').subscribe(
       (data) => {
         console.log(data);
         this.data = data; //put data into this.data array

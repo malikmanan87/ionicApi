@@ -1,14 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Fetch All Data </ion-title>
+    <ion-title>
+      <!-- Fetch All Data  -->
+      Fetch Single Data
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list *ngIf="data?.length > 0">
+  <!-- <ion-list *ngIf="data?.length > 0">
     <ion-item *ngFor="let item of data">
-      <!-- property binding -->
       <ion-label>{{item?.title}}</ion-label>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
+
+  <ion-item>
+    <ion-label class="ion-text-wrap">{{data?.title}}</ion-label>
+  </ion-item>
 </ion-content>

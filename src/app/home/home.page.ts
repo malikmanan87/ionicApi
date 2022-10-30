@@ -45,16 +45,27 @@ export class HomePage {
     //     }
     //   );
 
+    // this.http
+    //   .put<any>('https://jsonplaceholder.typicode.com/create_todos', {
+    //     title: 'ABCD',
+    //     completed: true,
+    //     userId: 40,
+    //   })
+    //   .subscribe(
+    //     (data) => {
+    //       console.log(data);
+    //       this.data = data;
+    //     },
+    //     (e) => {
+    //       console.log(e);
+    //     }
+    //   );
+
     this.http
-      .put<any>('https://jsonplaceholder.typicode.com/create_todos', {
-        title: 'ABCD',
-        completed: true,
-        userId: 40,
-      })
+      .delete<any>('https://jsonplaceholder.typicode.com/create_todos/1')
       .subscribe(
         (data) => {
           console.log(data);
-          this.data = data;
         },
         (e) => {
           console.log(e);

@@ -16,7 +16,7 @@ export class HomePage {
 
   getData() {
     this.http
-      .get<any>('https://jsonplaceholder.typicode.com/todos/15')
+      .get<any>('https://jsonplaceholder.typicode.com/todos/50')
       .subscribe(
         (data) => {
           console.log('HTTP DATA: ',data);

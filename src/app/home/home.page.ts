@@ -16,10 +16,10 @@ export class HomePage {
 
   getData() {
     this.http
-      .get<any>('https://jsonplaceholder.typicode.com/todos/50')
+      .get<any>('https://jsonplaceholder.typicode.com/todos/15')
       .subscribe(
         (data) => {
-          console.log(data);
+          console.log('HTTP DATA: ',data);
           this.data = data; //put data into this.data array
         },
         (e) => {

@@ -1,0 +1,17 @@
+ion-toolbar {
+    // --min-height: 1vh;
+    ion-title {
+        --color: var(--ion-color-secondary);
+    }
+}
+
+ion-content {
+    ion-label {
+        margin-top: 5vh;
+    }
+}
+
+.labelItem {
+    font-weight: bold;
+    font-size: 1.2em;
+}

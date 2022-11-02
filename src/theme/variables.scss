@@ -68,11 +68,15 @@
   --ion-color-light-tint: #f5f6f9;
 
   --ion-color-purple: #580962;
-	--ion-color-purple-rgb: 88,9,98;
-	--ion-color-purple-contrast: #ffffff;
-	--ion-color-purple-contrast-rgb: 255,255,255;
-	--ion-color-purple-shade: #4d0856;
-	--ion-color-purple-tint: #692272;
+  --ion-color-purple-rgb: 88, 9, 98;
+  --ion-color-purple-contrast: #ffffff;
+  --ion-color-purple-contrast-rgb: 255, 255, 255;
+  --ion-color-purple-shade: #4d0856;
+  --ion-color-purple-tint: #692272;
+
+  // edited
+  --ion-toolbar-background: var(--ion-color-primary);
+  --ion-toolbar-color : var(--ion-color-primary-contrast);
 }
 
 @media (prefers-color-scheme: dark) {

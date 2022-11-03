@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Camera, CameraResultType } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Capacitor } from '@capacitor/core';
+// import { isPlatform } from '@ionic/angular';
+import { Share } from '@capacitor/share';
 
 @Component({
   selector: 'app-camera',
@@ -8,6 +10,8 @@ import { Capacitor } from '@capacitor/core';
   styleUrls: ['./camera.page.scss'],
 })
 export class CameraPage implements OnInit {
+  selectImage: any;
+
   constructor() {}
 
   ngOnInit() {}
@@ -21,7 +25,9 @@ export class CameraPage implements OnInit {
     const status = await Camera.requestPermissions();
     const image = await Camera.getPhoto({
       quality: 90,
-      allowEditing: true,
+      // allowEditing: true,
+      source: CameraSource.Prompt,
+      width: 600,
       resultType: CameraResultType.Uri,
     });
 
@@ -29,9 +35,19 @@ export class CameraPage implements OnInit {
     // You can access the original file using image.path, which can be
     // passed to the Filesystem API to read the raw data of the image,
     // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-    var imageUrl = image.webPath;
+    // var imageUrl = image.webPath;
+    console.log('image: ', image);
+    // this.selectImage = image.webPath;
+    this.selectImage = image.path;
 
     // Can be set to the src of an image now
     // imageElement.src = imageUrl;
+
+    let shareRet = await Share.share({
+      title: 'Image Sharing',
+      text: 'Share This Image',
+      url: this.selectImage,
+      dialogTitle: 'Image Sharing',
+    });
   }
 }

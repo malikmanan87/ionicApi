@@ -10,6 +10,7 @@ import { Share } from '@capacitor/share';
   styleUrls: ['./camera.page.scss'],
 })
 export class CameraPage implements OnInit {
+
   selectImage: any;
 
   constructor() {}
@@ -35,7 +36,6 @@ export class CameraPage implements OnInit {
     // You can access the original file using image.path, which can be
     // passed to the Filesystem API to read the raw data of the image,
     // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-    // var imageUrl = image.webPath;
     console.log('image: ', image);
     // this.selectImage = image.webPath;
     this.selectImage = image.path;

@@ -10,7 +10,6 @@ import { Share } from '@capacitor/share';
   styleUrls: ['./camera.page.scss'],
 })
 export class CameraPage implements OnInit {
-
   selectImage: any;
 
   constructor() {}
@@ -23,7 +22,6 @@ export class CameraPage implements OnInit {
   }
 
   async getPhoto() {
-    const status = await Camera.requestPermissions();
     const image = await Camera.getPhoto({
       quality: 90,
       // allowEditing: true,

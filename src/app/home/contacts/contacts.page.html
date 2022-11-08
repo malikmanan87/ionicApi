@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>contacts</ion-title>
+    <ion-title>contacts Plugin</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
@@ -8,9 +8,20 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let contact of contacts">
-      {{ contact?.displayName }}
-    </ion-item>
-  </ion-list>
+    <ion-list>
+      
+      <ion-item-sliding *ngFor="let contact of contacts">
+        <ion-item>
+          {{ contact?.displayName }}
+        </ion-item>
+
+        <ion-item-options side="end">
+          <ion-item-option>
+            <ion-icon name="call" (click)="call(contact)"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>  
+      </ion-item-sliding>
+
+    </ion-list>
+
 </ion-content>

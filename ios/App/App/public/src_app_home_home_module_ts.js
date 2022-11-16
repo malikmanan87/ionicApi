@@ -35,6 +35,10 @@ const routes = [
     {
         path: 'contacts',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_home_contacts_contacts_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./contacts/contacts.module */ 9373)).then(m => m.ContactsPageModule)
+    },
+    {
+        path: 'local-notification',
+        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_home_local-notification_local-notification_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./local-notification/local-notification.module */ 8388)).then(m => m.LocalNotificationPageModule)
     }
 ];
 let HomePageRoutingModule = class HomePageRoutingModule {
@@ -1062,7 +1066,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-title> Native Plugin </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-row>\r\n    <ion-col size=\"6\">\r\n      <ion-card color=\"primary\" routerLink=\"/home/network\">\r\n        <ion-card-header class=\"ion-text-center\"\r\n          >Network & Toast\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ion-col>\r\n    <ion-col size=\"6\">\r\n      <ion-card color=\"primary\" (click)=\"share()\">\r\n        <ion-card-header class=\"ion-text-center\"\r\n          >Social Sharing</ion-card-header\r\n        >\r\n      </ion-card>\r\n    </ion-col>\r\n    <ion-col size=\"6\">\r\n      <ion-card color=\"primary\" routerLink=\"/home/camera\">\r\n        <ion-card-header class=\"ion-text-center\"\r\n          >Access Camera\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ion-col>\r\n    <ion-col size=\"6\">\r\n      <ion-card color=\"primary\" routerLink=\"/home/contacts\">\r\n        <ion-card-header class=\"ion-text-center\">Contacts & Call</ion-card-header>\r\n      </ion-card>\r\n    </ion-col>\r\n  </ion-row>\r\n</ion-content>\r\n";
+module.exports = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-title> Native Plugins </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-row>\r\n    <ion-col size=\"6\">\r\n      <ion-card color=\"primary\" routerLink=\"/home/network\">\r\n        <ion-card-header>\r\n          <ion-card-title class=\"ion-text-center\"\r\n            >Network & Toast</ion-card-title\r\n          >\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ion-col>\r\n    <ion-col size=\"6\">\r\n      <ion-card color=\"primary\" (click)=\"share()\">\r\n        <ion-card-header>\r\n          <ion-card-title class=\"ion-text-center\"\r\n            >Social Sharing</ion-card-title\r\n          >\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ion-col>\r\n    <ion-col size=\"6\">\r\n      <ion-card color=\"primary\" routerLink=\"/home/camera\">\r\n        <ion-card-header>\r\n          <ion-card-title class=\"ion-text-center\"\r\n            >Access Camera\r\n          </ion-card-title></ion-card-header\r\n        >\r\n      </ion-card>\r\n    </ion-col>\r\n    <ion-col size=\"6\">\r\n      <ion-card color=\"primary\" routerLink=\"/home/contacts\">\r\n        <ion-card-header>\r\n          <ion-card-title class=\"ion-text-center\"\r\n            >Contacts & Call</ion-card-title\r\n          ></ion-card-header\r\n        >\r\n      </ion-card>\r\n    </ion-col>\r\n    <ion-col size=\"6\">\r\n      <ion-card color=\"primary\" routerLink=\"/home/local-notification\">\r\n        <ion-card-header>\r\n          <ion-card-title class=\"ion-text-center\"\r\n            >Local Notification</ion-card-title\r\n          ></ion-card-header\r\n        >\r\n      </ion-card>\r\n    </ion-col>\r\n  </ion-row>\r\n</ion-content>\r\n";
 
 /***/ })
 

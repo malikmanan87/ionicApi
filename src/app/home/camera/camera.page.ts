@@ -43,9 +43,9 @@ export class CameraPage implements OnInit {
 
     let shareRet = await Share.share({
       title: 'Image Sharing',
-      text: 'Share This Image',
+      // text: 'Share This Image',
       url: this.selectImage,
-      dialogTitle: 'Image Sharing',
+      // dialogTitle: 'Image Sharing',
     });
   }
 }

@@ -112,9 +112,9 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent],
         entryComponents: [],
         imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__.BrowserModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicModule.forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule],
-        providers: [_awesome_cordova_plugins_call_number_ngx__WEBPACK_IMPORTED_MODULE_2__.CallNumber,
+        providers: [
             { provide: _angular_router__WEBPACK_IMPORTED_MODULE_7__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.IonicRouteStrategy },
-            // CallNumber,
+            _awesome_cordova_plugins_call_number_ngx__WEBPACK_IMPORTED_MODULE_2__.CallNumber,
         ],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent],
     })

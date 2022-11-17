@@ -9,23 +9,20 @@ import { Toast } from '@capacitor/toast';
   styleUrls: ['./network.page.scss'],
 })
 export class NetworkPage implements OnInit, OnDestroy {
-  networkistener: PluginListenerHandle;
+
+  networkListner: PluginListenerHandle;
   // status: ConnectionStatus;
   status: string;
 
-  constructor(private NgZone: NgZone) {}
+  constructor(private ngZone: NgZone) { }
 
   async ngOnInit() {
-    this.networkistener = await Network.addListener(
-      'networkStatusChange',
-      (status) => {
-        console.log('Network status changed', status);
-        this.NgZone.run(() => {
-          this.changeStatus(status);
-        });
-      }
-    );
-
+    this.networkListner = await Network.addListener('networkStatusChange', status => {
+      console.log('Network status changed', status);
+      this.ngZone.run(() => {
+        this.changeStatus(status);
+      });
+    });
     const status = await Network.getStatus();
     this.changeStatus(status);
     console.log('Network status:', this.status);
@@ -35,11 +32,12 @@ export class NetworkPage implements OnInit, OnDestroy {
     // this.status = status;
     this.status = status.connected ? 'Online' : 'Offline';
     await Toast.show({
-      text: this.status,
+      text: this.status
     });
   }
 
   ngOnDestroy(): void {
-    if (this.networkistener) this.networkistener.remove();
+      if(this.networkListner) this.networkListner.remove();
   }
+
 }

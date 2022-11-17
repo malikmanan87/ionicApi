@@ -8,6 +8,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-button (click)="getPhoto()" expand="block"> Get Photo </ion-button>
+
+  <ion-button expand="block" (click)="getPhoto()">Get Photo</ion-button>
   <img *ngIf="selectImage" [src]="selectImage" />
+
 </ion-content>

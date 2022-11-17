@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Capacitor } from '@capacitor/core';
-// import { isPlatform } from '@ionic/angular';
 import { Share } from '@capacitor/share';
+// import { isPlatform } from '@ionic/angular';
 
 @Component({
   selector: 'app-camera',
@@ -10,14 +10,16 @@ import { Share } from '@capacitor/share';
   styleUrls: ['./camera.page.scss'],
 })
 export class CameraPage implements OnInit {
+
   selectImage: any;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   checkPlatformForWeb() {
-    if (Capacitor.getPlatform() == 'web') return true;
+    if(Capacitor.getPlatform() == 'web') return true;
     return false;
   }
 
@@ -27,9 +29,9 @@ export class CameraPage implements OnInit {
       // allowEditing: true,
       source: CameraSource.Prompt,
       width: 600,
-      resultType: CameraResultType.Uri,
+      resultType: CameraResultType.Uri
     });
-
+  
     // image.webPath will contain a path that can be set as an image src.
     // You can access the original file using image.path, which can be
     // passed to the Filesystem API to read the raw data of the image,
@@ -40,12 +42,12 @@ export class CameraPage implements OnInit {
 
     // Can be set to the src of an image now
     // imageElement.src = imageUrl;
-
     let shareRet = await Share.share({
       title: 'Image Sharing',
-      // text: 'Share This Image',
+      text: 'Share this Image',
       url: this.selectImage,
-      // dialogTitle: 'Image Sharing',
+      dialogTitle: 'Image Sharing',
     });
   }
+
 }

@@ -25,9 +25,6 @@ export class ContactsPage implements OnInit {
         if(!permission.granted) return;
       }
       const result = await Contacts.getContacts();
-      (result.contacts).slice(0, 10).map((item, i) => {
-        this.contacts.push(item);
-      });
       this.contacts = result.contacts;
       console.log(this.contacts);
       // for (const contact of result.contacts) {
@@ -40,11 +37,8 @@ export class ContactsPage implements OnInit {
   
   call(contact) {
     console.log(contact);
-    let phoneNumber = contact.phoneNumbers[0];
+    const phoneNumber = contact.phoneNumbers[0];
     if(phoneNumber) {
-      if(isPlatform('ios')) {
-        phoneNumber = phoneNumber.number;
-      }
       this.callNumber.callNumber(phoneNumber, true)
       .then(res => console.log('Launched dialer!', res))
       .catch(err => console.log('Error launching dialer', err));

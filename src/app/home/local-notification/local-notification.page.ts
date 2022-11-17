@@ -7,7 +7,8 @@ import { LocalNotifications } from '@capacitor/local-notifications';
   styleUrls: ['./local-notification.page.scss'],
 })
 export class LocalNotificationPage implements OnInit {
-  constructor() {}
+
+  constructor() { }
 
   async ngOnInit() {
     await LocalNotifications.requestPermissions();
@@ -17,20 +18,21 @@ export class LocalNotificationPage implements OnInit {
     const notifs = await LocalNotifications.schedule({
       notifications: [
         {
-          title: 'Native Plugins App',
-          body: 'Checking Local Notification',
+          title: "Native Plugins App",
+          body: "Checking local notifications",
           id: 1,
-          schedule: { at: new Date(Date.now() + 1000 * 1) },
-          sound: 'sound.wav',
+          schedule: { at: new Date(Date.now() + 1000 * 5) },
+          sound: null,
           attachments: null,
           smallIcon: 'ic_stat_adb',
-          actionTypeId: '',
+          actionTypeId: "",
           extra: {
-            data: 'Checking extras',
-          },
-        },
-      ],
+            data: 'Checking extras'
+          }
+        }
+      ]
     });
-    console.log('schedule notifications: ', notifs);
+    console.log('scheduled notifications: ', notifs);
   }
+
 }

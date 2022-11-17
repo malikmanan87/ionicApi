@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { Share } from '@capacitor/share';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
   constructor() {}
 
   async share() {
@@ -16,4 +18,5 @@ export class HomePage {
       dialogTitle: 'Share with buddies',
     });
   }
+
 }
